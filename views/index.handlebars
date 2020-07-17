@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>shuttle</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <ul id="left">
+                {{#each data as |item position|}}
+                    {{#unless item.selected }}
+                        {{> data/data-block }}
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col">
+            <ul id="right">
+                {{#each data as |item position|}}
+                    {{#if item.selected }}
+                        {{> data/data-block }}
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form action="/api/data/" method="post">
+                    <div class="form-group">
+                        <label for="data-text">Text</label>
+                        <textarea class="form-control" id="data-text" name="text"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Data</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
