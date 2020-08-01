@@ -1,6 +1,10 @@
 # bootcamp-homework-013
 
-## How to Install
+## Heroku Demo
+
+Visit https://calm-bastion-83000.herokuapp.com/
+
+## How to Install Locally
 
 1. Execute the following files in MySQL Workbench
     ```
