@@ -4,8 +4,8 @@ const mysql = require( 'mysql' );
 // !! Sensitive information, use this only for development purposes, this
 // !! should not be committed into a production application's repository
 let connection;
-if ( process.env.JAWS_DB_URL ){
-    connection = mysql.createConnection( process.env.JAWS_DB_URL );
+if ( process.env.JAWSDB_URL ){
+    connection = mysql.createConnection( process.env.JAWSDB_URL );
 } else {
     connection = mysql.createConnection( {
         host: "localhost",
