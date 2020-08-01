@@ -3,16 +3,21 @@ const mysql = require( 'mysql' );
 // SECTION MySQL Setup
 // !! Sensitive information, use this only for development purposes, this
 // !! should not be committed into a production application's repository
-const connection = mysql.createConnection( {
-    host: "localhost",
-    // Default port for MySQL is 3306
-    port: 3306,
-    // Default user for MySQL is root
-    // !! You should not use user "root" in production environments
-    user: "root",
-    password: "mysql",
-    database: "avt_shuttle"
-} );
+let connection;
+if ( process.env.JAWS_DB_URL ){
+    connection = mysql.createConnection( process.env.JAWS_DB_URL );
+} else {
+    connection = mysql.createConnection( {
+        host: "localhost",
+        // Default port for MySQL is 3306
+        port: 3306,
+        // Default user for MySQL is root
+        // !! You should not use user "root" in production environments
+        user: "root",
+        password: "mysql",
+        database: "avt_shuttle"
+    } );
+}
 // !SECTION MySQL Setup
 
 // SECTION Database Connection
