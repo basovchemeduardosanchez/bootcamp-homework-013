@@ -1,4 +1,6 @@
-USE avt_shuttle;
+-- Uncomment for local initialization
+-- USE avt_shuttle;
+USE rohh2ch3c4my11bv;
 
 INSERT INTO
     data (
